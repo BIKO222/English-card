@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Английские карточки</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="content">
+
+  <h1>Английские карточки</h1>
+
+  <label for="level-select">Выберите уровень:</label>
+  <select id="level-select">
+    <option value="A1">A1</option>
+    <option value="A2">A2</option>
+    <option value="B1">B1</option>
+    <option value="B2">B2</option>
+    <option value="C1">C1</option>
+    <option value="C2">C2</option>
+  </select>
+
+  <div class="card-container">
+    <div class="card" id="card">
+      <div class="card-side card-front" id="card-front">word</div>
+      <div class="card-side card-back" id="card-back">перевод</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevCard()">◀ Назад</button>
+    <button onclick="flipCard()">Перевернуть</button>
+    <button onclick="nextCard()">Вперёд ▶</button>
+  </div>
+
+<button onclick="startQuiz()">🧠 Режим теста</button>
+
+<div id="quiz" style="display: none; margin-top: 20px;">
+  <h2 id="quiz-word"></h2>
+  <div id="options"></div>
+  <div id="quiz-feedback" style="margin-top: 10px; font-weight: bold;"></div>
+<button onclick="exitQuiz()">Выйти из теста</button>
+
+</div>
+</div>
+  <script src="script.js">
+  </script>
+</body>
+</html>

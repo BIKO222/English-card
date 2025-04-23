@@ -1,0 +1,131 @@
+ body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      color: white;
+      background-color: #000; /* Чёрный фон */
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 2.5rem;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #111; /* Тёмный фон для блока */
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-container {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+  width: 250px;
+  height: 150px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #444;
+  position: relative;
+  transition: transform 0.6s ease;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d; /* Добавляем это! */
+}
+
+
+    .card:hover {
+      transform: scale(1.05); /* Увеличение на hover */
+      box-shadow: 0 5px 25px rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #e63946, #457b9d); /* Цвета на hover */
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      border-radius: 10px;
+      background-color: #222; /* Цвет фронтальной и обратной сторон */
+    }
+
+    .card-front {
+      color: #f4f4f4;
+    }
+
+
+    .card-back {
+      color: #00ff66;
+      transform: rotateY(180deg);
+box-shadow: 0 5px 15px rgba(0, 255, 0, 0.4); /* мягкая зелёная тень */
+
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    button:hover {
+      background-color: #555;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+    }
+
+    select {
+      padding: 10px;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    select:hover {
+      background-color: #444;
+    }
+.content {
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+  max-width: 600px;
+  margin: 20px auto;
+}
+.card {
+  transform-style: preserve-3d; /* позволяет отображать обе стороны */
+}
