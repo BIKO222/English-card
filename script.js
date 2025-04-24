@@ -87,17 +87,20 @@ const levels = {
   back.textContent = word.ru; // Обратная сторона: перевод на русском
 }
 
+function nextCard() {
+  // всегда возвращаемся к английской стороне
+  card.classList.remove("flipped");
 
+  currentIndex = (currentIndex + 1) % levels[currentLevel].length;
+  updateCard();
+}
 
-    function nextCard() {
-      currentIndex = (currentIndex + 1) % levels[currentLevel].length;
-      updateCard();
-    }
+function prevCard() {
+  card.classList.remove("flipped");
 
-    function prevCard() {
-      currentIndex = (currentIndex - 1 + levels[currentLevel].length) % levels[currentLevel].length;
-      updateCard();
-    }
+  currentIndex = (currentIndex - 1 + levels[currentLevel].length) % levels[currentLevel].length;
+  updateCard();
+}
 
     function flipCard() {
       card.classList.toggle("flipped");
@@ -176,5 +179,6 @@ function exitQuiz() {
   currentIndex = 0;
   updateCard();
 }
+card.addEventListener("click", flipCard);
 
     updateCard();
